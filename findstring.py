@@ -3,7 +3,7 @@ import os
 
 class FindString:
     def __init__(self):
-        """findstring class construtor"""
+        """findstring class construtor."""
         self.path = os.getcwd()
         self.filepath = ""
         self.file_extension = ""
