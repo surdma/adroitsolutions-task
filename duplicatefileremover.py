@@ -16,7 +16,7 @@ class DuplicateRemover:
             self.sub_folder = sub_folders
             for file in files:
                 filepath = os.path.join(folder, file)
-                hashfile = hashlib.md5(open(filepath, 'rb').read()).hexdigest()
+                hashfile = hashlib.sha256(open(filepath, 'rb').read()).hexdigest()
                 if hashfile in self.uniqueFiles:
                     print(f"{filepath} has been deleted")
                     os.remove(filepath)
