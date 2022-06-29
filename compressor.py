@@ -6,6 +6,9 @@ from argparse import ArgumentParser
 
 class FileCompresser:
     def __init__(self):
+        """
+          This is the constructor for these class
+        """
         self.argument_parser = ArgumentParser()
         self.argument_parser.add_argument('-d', '--directory', required=False,
                                           help="""Path to director/folder you want to compress
@@ -20,7 +23,7 @@ class FileCompresser:
         try:
             src_directory = Path(self.args['directory']).expanduser().resolve()
             self.file_name = f"{src_directory}.zip"
-            with ZipFile(self.file_name, mode='w', compression=ZIP_BZIP2, compresslevel=5,
+            with ZipFile(self.file_name, mode='w', compression=ZIP_BZIP2,
                          allowZip64=True) as zipIT:
                 for filepath in src_directory.rglob("*"):
                     zipIT.write(filepath, arcname=filepath.relative_to(src_directory))
