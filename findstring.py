@@ -3,9 +3,11 @@ import os
 
 class FindString:
     def __init__(self):
+        """findstring class construtor"""
         self.path = os.getcwd()
         self.filepath = ""
         self.file_extension = ""
+        self.sub_folder = ""
 
     def searchstring(self, folder_name, text):
         if folder_name == "":
@@ -14,6 +16,7 @@ class FindString:
             walker = os.walk(folder_name)
         if walker:
             for (base_folder, sub_folders, files) in walker:
+                self.sub_folder = sub_folders
                 for file in files:
                     self.filepath = os.path.join(base_folder, file)
                     self.file_extension = os.path.splitext(self.filepath)[-1].lower()
