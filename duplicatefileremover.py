@@ -4,7 +4,7 @@ import hashlib
 
 class DuplicateRemover:
     def __init__(self):
-        """Duplicate remover constructor"""
+        """Duplicate remover constructor."""
         self.path = os.getcwd()
         self.walk = os.walk(self.path)
         self.uniqueFiles = dict()
