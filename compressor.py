@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 
 class FileCompresser:
     def __init__(self):
-        """This is the doc string for these class"""
+        """This is the doc string for these class."""
 
 
         self.argument_parser = ArgumentParser()
